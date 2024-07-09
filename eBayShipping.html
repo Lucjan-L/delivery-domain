@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="eBayShipping.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="https://humza-dev--famous-mochi-bda266.netlify.app/static/media/logo.203c4e9435538ba4b689b1a02571e5cb.svg"
+      alt="Logo"
+    />
+
+    <h2>Shipping Form</h2>
+    <button id="signOut">Sign out</button>
+    <button id="payLabel">Pay</button>
+
+    <div class="container" id="container">
+      <span id="numbering1">1</span>
+      <span id="numbering2">2</span>
+      <span id="numbering3">3</span>
+      <span id="numbering4">4</span>
+      <span id="numbering5">5</span>
+      <span id="numbering6">6</span>
+      <span id="numbering7">7</span>
+      <span id="numbering8">8</span>
+      <span id="numbering9">9</span>
+      <span id="numbering10">10</span>
+      <form class="form" id="form">
+        <input type="checkbox" id="checkbox1" name="" value="" />
+
+        <div class="form-group">
+          <h3 id="name1">
+            <span class="asterisk">*</span>
+            <span class="title">Recipient Name</span>
+          </h3>
+          <input id="recipientName1" placeholder="Recipient Name" required />
+        </div>
+        <div class="form-group">
+          <h3 id="address1">
+            <span class="asterisk">*</span> <span class="title">Address</span>
+          </h3>
+          <input id="shipAddressOne1" placeholder="Address" required />
+          <input id="shipAddressTwo1" placeholder="Apartment, suite, etc." />
+          <input id="shipCity1" placeholder="City" required />
+          <input id="shipPostcode1" placeholder="Postcode" required />
+          <input id="shipCountry1" value="United Kingdom" />
+        </div>
+        <div class="form-group">
+          <h3 id="parcel1">
+            <span class="asterisk">*</span> <span class="title">Parcel</span>
+          </h3>
+
+          <input
+            id="productPrice1"
+            placeholder="Product Price"
+            style="margin-bottom: 20px"
+            required
+          />
+          <textarea
+            id="productDescription1"
+            placeholder="Product Description"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <h3 for="DeliveryOptions" id="DeliveryOptions">
+            <span class="asterisk">*</span>
+            <span class="title">Delivery Options</span>
+          </h3>
+          <select id="deliveryOptions1">
+            <option value="100">Small letter (£3.00)</option>
+            <option value="200">Large letter (£4.00)</option>
+            <option value="300">Second class (5-6 working days)</option>
+            <option value="400">First class (2-3 working days)</option>
+            <option value="500">Special next-day delivery by 1:00 PM</option>
+          </select>
+          <textarea
+            id="deliveryNotes1"
+            placeholder="Delivery Notes"
+            required
+          ></textarea>
+          <input id="additionalNotes1" placeholder="Additional Notes" />
+        </div>
+        <div class="form-group">
+          <h3 id="additionalNotes" class="title">Additional Notes</h3>
+        </div>
+
+        <div>
+          <button class="no-click-cursor" id="printLabel1">Print label</button>
+        </div>
+        <div>
+          <button class="no-click-cursor" id="downloadLabel1">
+            Download label
+          </button>
+        </div>
+      </form>
+    </div>
+    <div id="cloneContainer"></div>
+    <div id="addDeliveryContainer">
+      <button id="addDelivery">+</button
+      ><label id="addDeliveryLabel">(Add a delivery)</label>
+    </div>
+    <!--<button id="submit">Submit</button>-->
+
+    <form id="payment-form" class="payment_form">
+      <div id="payment-element">
+        <!--Stripe.js injects the Payment Element-->
+      </div>
+      <button id="submit" class="button">
+        <div class="spinner hidden" id="spinner"></div>
+        <span id="button-text">Pay now and Submit</span>
+      </button>
+      <div id="payment-message" class="hidden"></div>
+      <!-- X button to close pay form for tip -->
+      <button class="close_pay" id="close_pay">✕</button>
+    </form>
+    <button id="clearFormsButton">Clear forms</button>
+    <button id="buttona"></button>
+
+    <!-- Submit Form Button -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="module" src="eBayShipping.js" defer></script>
+    <!--<script type="module" src="payment/paymentPage.js"></script>-->
+    <iframe id="pdfFrame"></iframe>
+  </body>
+</html>
